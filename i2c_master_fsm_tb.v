@@ -4,9 +4,9 @@ module i2c_master_fsm_tb;
 
     reg clk = 0;
     reg trigger = 0;
-    reg [6:0] address = 7'h50;  // Example I2C addressess
-    reg rw = 0;              // Write operation
-    reg [7:0] din = 8'hA5;   // Data to send
+    reg [6:0] address = 7'h50;       // Example I2C addressess
+    reg rw = 0;                      // Write operation
+    reg [7:0] din = 8'hA5;           // Data to send
     wire [7:0] dout;
     wire sda;
     wire sclk;
@@ -16,10 +16,9 @@ module i2c_master_fsm_tb;
 
     always #5 clk = ~clk;  // 10ns clock period
 
-    initial begin
-        $dumpfile("i2c_master_fsm_tb.vcd");
-        $dumpvars(0, i2c_master_fsm_tb);
-
+    initial 
+        begin
+        
         // Wait for a few clock cycles
         #100;
 
