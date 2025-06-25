@@ -19,13 +19,13 @@ reg [3:0] shift_reg_counter = 0;
         assign sda = sda_dir_m ?  1'bz : sda_out;
 
 
-parameter       IDLE                             =      4'd0,
-                          ADDR_st                      =      4'd1,
-                          ADDR_ACK                  =      4'd2,
-                          DATA                           =      4'd3,
-                          DATA_ACK                  =       4'd4,
-                          STOP_CONDITIONS    =      4'd5,
-                          END                                 =      4'd6;
+parameter                 IDLE                             =      4'd0,
+                          ADDR_st                          =      4'd1,
+                          ADDR_ACK                         =      4'd2,
+                          DATA                             =      4'd3,
+                          DATA_ACK                         =      4'd4,
+                          STOP_CONDITIONS                  =      4'd5,
+                          END                              =      4'd6;
 
 
 
@@ -72,7 +72,7 @@ case (state)
                 begin
                     state <= ADDR_st;
                 end 
-end 
+          end 
             
             
 
@@ -115,13 +115,13 @@ end
                     sda_out <= 0;  // ACK
                     ack_pass <= 1;
                     
-                // this has been added now onlyyy    
+               
                 if (sclk_prev == 1 && sclk == 0) 
                 begin
                     state <= DATA;
                     ack_pass <= 0;
                 end
-                // till here    
+                
                     
                     
                 end 
